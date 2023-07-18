@@ -41,8 +41,15 @@ public class Contacto extends HttpServlet {
 		request.setAttribute("nombre", nombre);
 		request.setAttribute("email", email);
 		request.setAttribute("consulta", consulta);
-		
+		displayData(nombre, email, consulta);
 		response.sendRedirect("Contacto");
 	}
+	
+	private void displayData(String nombre, String email, String mensaje) {
+        System.out.println("Datos del formulario de contacto:");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Correo electrónico: " + email);
+        System.out.println("Mensaje: " + mensaje);
+    }
 
 }
