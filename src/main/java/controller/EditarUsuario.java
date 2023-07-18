@@ -36,14 +36,9 @@ public class EditarUsuario extends HttpServlet {
 	        UsuarioDAOImpl usuarioDAO = new UsuarioDAOImpl();
 	        Usuario usuarioId = usuarioDAO.obtenerUsuarioPorId(Integer.parseInt(id), tipo);
 	        
-	        if (usuarioId != null) {
-	            request.setAttribute("usuarioId", usuarioId);
-	            request.setAttribute("tipo", tipo);
-	            request.getRequestDispatcher("editarUsuario.jsp").forward(request, response);
-	        } else {
-	            //si el usuario no existe.
-	            response.sendRedirect("error.jsp");
-	        }
+	        request.setAttribute("usuarioId", usuarioId);
+            request.setAttribute("tipo", tipo);
+            request.getRequestDispatcher("editarUsuario.jsp").forward(request, response);
 	    } else {
 	        // parámetros no están presentes.
 	        response.sendRedirect("error.jsp");

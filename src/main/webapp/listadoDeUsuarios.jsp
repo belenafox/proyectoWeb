@@ -57,8 +57,10 @@
 	                </tr>
 	            </thead>
 	            <tbody>
+	            	<% boolean hayAdministrativos = false; %>
 	                <% for (Usuario usuario : usuarios) { %>
-	                	<% if ("Administrativo".equals(usuario.getTipo())) { %>
+	                	<% if ("Administrativo".equals(usuario.getTipo())) { 
+	                	hayAdministrativos = true;%>
 	                	<tr>
 	                		<td><%= usuario.getId() %></td>
 	                        <td><%= usuario.getNombre() %></td>
@@ -66,14 +68,15 @@
 	                        <td><%= usuario.getRut() %></td>
 	                        <td><%= ((Administrativo) usuario).getArea() %></td>
 	                        <td><%= ((Administrativo) usuario).getExperiencia() %></td>
-	                        <td><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
+	                        <td class="d-flex justify-content-center"><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
 	                    </tr>
-	                	<%} else { %>
-	                	<tr>
-			                <td colspan="10" class="text-center">No hay administrativos</td>
-			            </tr>
-			           <% } %>
+	                	<% } %>
                    <% } %>
+                   <% if (!hayAdministrativos) { %>
+                	<tr>
+		                <td colspan="10" class="text-center">No hay administrativos</td>
+		            </tr>
+		           <% } %>
 	            </tbody>
 	        </table>
 	        
@@ -94,8 +97,10 @@
 	                </tr>
 	            </thead>
 	            <tbody>
+	            	<% boolean hayClientes = false; %>
 	                <% for (Usuario usuario : usuarios) { %>
-	                	<% if ("Cliente".equals(usuario.getTipo())) { %>
+	                	<% if ("Cliente".equals(usuario.getTipo())) { 
+	                	hayClientes = true; %>
 	                	<tr>
 	                		<td><%= usuario.getId() %></td>
 	                        <td><%= usuario.getNombre() %></td>
@@ -107,14 +112,15 @@
 	                        <td><%= ((Cliente) usuario).getDireccion() %></td>
 	                        <td><%= ((Cliente) usuario).getComuna() %></td>
 	                        <td><%= ((Cliente) usuario).getEdad() %></td>
-	                        <td><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
+	                        <td class="d-flex justify-content-center"><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
 	                    </tr>
-	                	<%} else { %>
-	                	<tr>
-			                <td colspan="10" class="text-center">No hay clientes</td>
-			            </tr>
-			           <% } %>
+	                	<% } %>
                    <% } %>
+                   <% if (!hayClientes) { %>
+                	<tr>
+		                <td colspan="10" class="text-center">No hay clientes</td>
+		            </tr>
+		           <% } %>
 	            </tbody>
 	        </table>
 	        
@@ -131,8 +137,10 @@
 	                </tr>
 	            </thead>
 	            <tbody>
+	            	<% boolean hayProfesionales = false; %>
 	                <% for (Usuario usuario : usuarios) { %>
-	                	<% if ("Profesional".equals(usuario.getTipo())) { %>
+	                	<% if ("Profesional".equals(usuario.getTipo())) { 
+	                	hayProfesionales = true;%>
 	                	<tr>
 	                		<td><%= usuario.getId() %></td>
 	                        <td><%= usuario.getNombre() %></td>
@@ -140,14 +148,15 @@
 	                        <td><%= usuario.getRut() %></td>
 	                        <td><%= ((Profesional) usuario).getTitulo() %></td>
 	                        <td><%= ((Profesional) usuario).getFechaIngreso() %></td>
-	                        <td><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
+	                        <td class="d-flex justify-content-center"><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
 	                    </tr>
-	                	<%} else { %>
-	                	<tr>
-			                <td colspan="10" class="text-center">No hay profesionales</td>
-			            </tr>
-			           <% } %>
+	                	<% }  %>
                    <% } %>
+                   <% if (!hayProfesionales) { %>
+                	<tr>
+		                <td colspan="10" class="text-center">No hay profesionales</td>
+		            </tr>
+		           <% } %>
 	            </tbody>
 	        </table>
 	        
