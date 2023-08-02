@@ -14,24 +14,24 @@
 	<%@ include file="menu.jsp" %>
 	<main class="container">
         <h4 class="titulo-form">Crear Capacitación</h4>
-        <form action="CrearCapacitacion" method="post">
+        <form:form action="CrearCapacitacion" method="post" modelAttribute="capacitacion">
             <div class="form-group form-control-personalizado">
-                <input type="text" id="nombre" name="nombre" class="form-control input-personalizado" placeholder="Nombre:">
+                <form:input path="nombre" required="true" type="text" id="nombre" name="nombre" class="form-control input-personalizado" placeholder="Nombre:" />
             </div>
             <div class="form-group form-control-personalizado">
-                <input id="lugar" name="lugar" class="form-control input-personalizado" placeholder="Lugar:">
+                <form:input path="lugar" required="true" id="lugar" name="lugar" class="form-control input-personalizado" placeholder="Lugar:" />
             </div>
             <div class="form-group form-control-personalizado">
-                <input type="date" id="fecha" name="fecha" class="form-control input-personalizado" placeholder="Fecha:">
+                <form:input path="fecha" required="true" type="date" id="fecha" name="fecha" class="form-control input-personalizado" placeholder="Fecha:" />
             </div>
             <div class="form-group form-control-personalizado">
-                <input type="time" id="hora" name="hora" class="form-control input-personalizado" placeholder="Hora:">
+                <form:input path="hora" required="true" type="time" id="hora" name="hora" class="form-control input-personalizado" placeholder="Hora:" />
             </div>
             <div class="form-group form-control-personalizado">
-                <input id="duracion" name="duracion" class="form-control input-personalizado" placeholder="Duración:">
+                <form:input path="duracion" required="true" id="duracion" name="duracion" class="form-control input-personalizado" placeholder="Duración:" />
             </div>
             <button type="submit" class="btn btn-dark btn-submit-personalizado">Crear</button>
-        </form>
+        </form:form>
 	</main>
 	<%@ include file="footer.jsp" %>
 	

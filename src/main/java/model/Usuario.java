@@ -1,13 +1,15 @@
 package model;
 
 public class Usuario {
+	private int id;
 	private String nombre;
 	private String fechaNacimiento;
 	private String rutUsuario;
 	private String tipo;
 	
-	public Usuario(String nombre, String fechaNacimiento, String rutUsuario, String tipo) {
+	public Usuario(int id, String nombre, String fechaNacimiento, String rutUsuario, String tipo) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
 		this.rutUsuario = rutUsuario;
@@ -20,8 +22,16 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", rutUsuario=" + rutUsuario
+		return "Usuario [id="+ id +", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", rutUsuario=" + rutUsuario
 				+ ", tipo=" + tipo + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -55,4 +65,5 @@ public class Usuario {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
 }

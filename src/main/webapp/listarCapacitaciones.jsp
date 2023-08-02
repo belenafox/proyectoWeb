@@ -14,7 +14,7 @@
 </head>
 <body>
 	<%@ include file="menu.jsp" %>
-	<section>
+	<section class="container-listarCapacitaciones">
 		<div class="container">
 	        <h4 class="titulo-form">Listado de Capacitaciones</h4>
 			<a class="btn btn-dark btn-agregar-capacitacion" href="/ProyectoWeb/CrearCapacitacion">Agregar Capacitación</a>

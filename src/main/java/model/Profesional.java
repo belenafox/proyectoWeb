@@ -1,11 +1,11 @@
 package model;
 
-public class Profesional {
+public class Profesional extends Usuario {
 	private String titulo;
     private String fechaIngreso;
     
-	public Profesional(String titulo, String fechaIngreso) {
-		super();
+	public Profesional(int id, String nombre, String fechaNacimiento, String rutUsuario, String tipo, String titulo, String fechaIngreso) {
+		super(id, nombre, fechaNacimiento, rutUsuario, tipo);
 		this.titulo = titulo;
 		this.fechaIngreso = fechaIngreso;
 	}
@@ -16,7 +16,9 @@ public class Profesional {
 
 	@Override
 	public String toString() {
-		return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
+		return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + ", getId()=" + getId()
+				+ ", getNombre()=" + getNombre() + ", getFechaNacimiento()=" + getFechaNacimiento()
+				+ ", getRutUsuario()=" + getRutUsuario() + ", getTipo()=" + getTipo() + "]";
 	}
 
 	public String getTitulo() {
